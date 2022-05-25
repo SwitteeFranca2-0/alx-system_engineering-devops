@@ -1,2 +1,2 @@
 #!/bin/bash
-ls  -p   --format=comma ..*  .* -d * /  | sort -n -k1 
+ls  -F --format=comma  .* -d  * /  | sort  -k1 
