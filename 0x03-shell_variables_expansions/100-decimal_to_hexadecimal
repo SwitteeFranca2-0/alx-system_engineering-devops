@@ -1,2 +1,2 @@
 #!/bin/bash
-printf -v hex "%x" $DECIMAL && echo $hex
+echo $"%x" 546
