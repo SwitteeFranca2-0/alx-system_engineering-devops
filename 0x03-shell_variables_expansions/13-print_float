@@ -1,2 +1,2 @@
 #!/bin/bash
-echo to_float(55, 2)
+printf "%0.2f " $NUM
