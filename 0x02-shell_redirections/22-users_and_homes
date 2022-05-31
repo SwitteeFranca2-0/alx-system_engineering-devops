@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l | sort -k 1  
+getent passwd | sort -k 1  
