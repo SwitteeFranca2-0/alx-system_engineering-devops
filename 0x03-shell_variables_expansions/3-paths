@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | grep -c */ | wc -l 
+echo $PATH | fmt -w 1 | wc -l 
