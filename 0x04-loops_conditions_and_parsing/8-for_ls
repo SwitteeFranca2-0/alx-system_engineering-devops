@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#This is a shell script
+
+LIST=$(ls)
+for i in $LIST; do
+	echo "$i"
+done
