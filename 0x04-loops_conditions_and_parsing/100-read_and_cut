@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#This is a shell script that prints out specific information about specific coumns in the passwd file
+
+while read -r line;
+do
+	echo "$line" | cut -d ":" -f1,3,6
+done < "/etc/passwd"
