@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This shoes the bid of bash processes
+
+pgrep -l bash

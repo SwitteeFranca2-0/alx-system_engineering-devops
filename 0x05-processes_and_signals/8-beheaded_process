@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script is to kill a process that traps s terminating signal
+
+kill -s SIGKILL "$(ps -aux | pgrep -f 7-highlander)"
