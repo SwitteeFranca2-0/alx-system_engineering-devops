@@ -32,11 +32,11 @@ int main(void)
 		if (zombie > 0)
 		{
 			printf("Zombie process created, PID: %i\n", zombie);
-			sleep(2);
+			sleep(1);
 		}
 		else
 		{
-			exit;
+			exit(0);
 		}
 
 	}
