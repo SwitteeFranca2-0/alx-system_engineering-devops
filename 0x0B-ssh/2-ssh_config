@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+#Configure a server to allow connection without password authentication
+Host *
+    PasswordAuthentication no
+    Identifyfile ~/.ssh/school
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAunthentication yes
+    GSSAPIDelegateCredentials no
