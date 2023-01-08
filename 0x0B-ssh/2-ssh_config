@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #Configure a server to allow connection without password authentication
 Host *
     PasswordAuthentication no
