@@ -3,9 +3,12 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo echo 'Hello World!' > /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
 service nginx start
-server {
+
+cd /etc/nginx/sites-enabled
+sudo echo "
+        server {
         listen 80 default_server;
         listen [::]:80 default_server;
          root /var/www/html;
@@ -19,5 +22,5 @@ server {
         }
         if ($request_filename ~ redirect_me) {
             return 301 https://www.istockphoto.com/photos/horror$request_uri;
-        }
+        }" > default
 service nginx restart
