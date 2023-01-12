@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#configure an error 404 page
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo -R chmod 755 /var/www
+sudo echo 'Hello World!' > /var/www/html/index.html
+
+service nginx start
+echo "Ceci n'est pas une page" > error404.html
+sudo mv error404.html /var/www/html
+cd /etc/nginx/sites-available
+sudo echo "
+    server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =400;
+        }
+        if ($request_filename ~ redirect_me) {
+                return 301 https://www.istockphoto.com/photos/horror$request_uri;
+        }
+
+        error_page 400 404 /error404.html;
+        location = /error404.html{
+                internal;
+        }
+    }" > default
+cd ~
+sudo service nginx restart

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#install ngonx on a server and some instructions
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo -R chmod 755 /var/www
+sudo echo 'Hello World!' > /var/www/html/index.html
+service nginx start

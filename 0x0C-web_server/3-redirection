@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#redirects to another page
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo 'Hello World!' > /var/www/html/index.html
+service nginx start
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+         root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =400;
+        }
+        if ($request_filename ~ redirect_me) {
+            return 301 https://www.istockphoto.com/photos/horror$request_uri;
+        }
+service nginx restart
