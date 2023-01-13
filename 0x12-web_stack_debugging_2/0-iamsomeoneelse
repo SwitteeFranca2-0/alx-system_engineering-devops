@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #a scrpt that runs the whoami commmand
-su "$1"
-whoami
+su "$1" -s /bin/bash -c 'whoami'
