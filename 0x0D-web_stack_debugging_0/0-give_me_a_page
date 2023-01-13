@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # run apache on holberton container
 
 echo "ServerName localhost" >> /etc/apache2.conf
