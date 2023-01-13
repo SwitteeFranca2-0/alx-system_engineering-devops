@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #run nginx as user nginx
-su nginx
+su -c nginx
 service nginx start
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
