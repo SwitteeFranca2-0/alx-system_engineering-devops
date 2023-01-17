@@ -14,7 +14,7 @@ if __name__ == "__main__":
     for i in range(1, 11):
         for item in info:
             if item.get("id") == i:
-                name = item.get('name')
+                name = item.get('username')
         tasks = []
         for task in req:
             tasks.append({"username": name, "task": task.get('title') , "completed": task.get('completed')})

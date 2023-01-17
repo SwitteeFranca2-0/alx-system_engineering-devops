@@ -14,10 +14,10 @@ if __name__ == "__main__":
              tasks in req if tasks.get('userId') == int(sys.argv[1])}
     for item in info:
         if item.get("id") == int(sys.argv[1]):
-            name = item.get('name')
+            name = item.get('username')
     infos = []
     for title, task in tasks.items():
-        dic_info = {"task": title, "title": task, "username": name}
+        dic_info = {"task": title, "completed": task, "username": name}
         infos.append(dic_info)
     data_employee = {}
     data_employee[sys.argv[1]] = infos

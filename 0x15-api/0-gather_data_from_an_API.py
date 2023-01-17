@@ -15,8 +15,8 @@ if __name__ == "__main__":
         if item.get("id") == int(sys.argv[1]):
             name = item.get('name')
     num = sum(1 for v in tasks.values() if v is True)
-    print('Employee {} is done with tasks ({}/{}):'.format
+    print('Employee {} is done with tasks({}/{}):'.format
           (name, num, len(tasks)))
     for title, task in tasks.items():
         if task is True:
-            print('{}'.format(title))
+            print('\t {}'.format(title))
