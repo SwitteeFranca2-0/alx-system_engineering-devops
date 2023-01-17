@@ -17,9 +17,10 @@ if __name__ == "__main__":
                 name = item.get('username')
         tasks = []
         for task in req:
-            tasks.append({"username": name, "task": task.get('title') , "completed": task.get('completed')})
+            if task.get('userId') == i:
+                tasks.append({"username": name, "task": task.get('title'),
+                             "completed": task.get('completed')})
         dict_employee[i] = tasks
-
 
     with open('todo_all_employees.json', 'w') as f:
         json.dump(dict_employee, f)
