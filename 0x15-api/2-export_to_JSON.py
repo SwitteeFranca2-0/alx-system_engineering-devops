@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Gather data froman api"""
 
-import csv
+import json
 import requests
 import sys
 
@@ -15,11 +15,12 @@ if __name__ == "__main__":
     for item in info:
         if item.get("id") == int(sys.argv[1]):
             name = item.get('name')
-    data_employee = []
+    infos = []
     for title, task in tasks.items():
-        infos = []
-        infos.extend([str(sys.argv[1]), str(name), str(task), str(title)])
-        data_employee.append(infos)
+        dic_info = {"task": title, "title": task, "username": name}
+        infos.append(dic_info)
+    data_employee = {}
+    data_employee[sys.argv[1]] = infos
 
     with open('{}.json'.format(sys.argv[1]), 'w') as f:
-            qwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+        json.dump(data_employee, f)
